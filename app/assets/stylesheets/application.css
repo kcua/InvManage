@@ -8,3 +8,76 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* Login page wrapper with background */
+/* Background for login page */
+.login-page {
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-page {
+  background-image: url('/assets/login_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+  position: relative;
+}
+
+/* Dark overlay */
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+/* Login form container */
+.login-container {
+  position: relative;
+  z-index: 1; /* above overlay */
+  width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+  margin: 50px auto;
+}
+
+/* Heading */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Login button */
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: #0056b3;
+}
