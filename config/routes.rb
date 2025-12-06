@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :items     # creates all CRUD routes for items
-  resources :categories # creates all CRUD routes for categories
+  # Admin routes
+  namespace :admin do
+    resources :users, only: [:index, :edit, :update]
+  end
 
-  root "items#index"   # sets the home page of the app
+  # Devise authentication routes
+  devise_for :users
+
+  # Application resources
+  resources :items       # CRUD routes for items
+  resources :categories  # CRUD routes for categories
+
+  # Root path
+  root "items#index"
 end

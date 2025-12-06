@@ -1,0 +1,16 @@
+<h1>Edit User Role</h1>
+
+<p><strong>Email:</strong> <%= @user.email %></p>
+
+<%= form_with model: [:admin, @user] do |f| %>
+  <div>
+    <%= f.label :role %><br>
+    <%= f.select :role, [["Employee", "employee"], ["Manager", "manager"]] %>
+  </div>
+
+  <br>
+  <%= f.submit "Update Role" %>
+<% end %>
+
+<br>
+<%= link_to "Back to Users", admin_users_path %>
